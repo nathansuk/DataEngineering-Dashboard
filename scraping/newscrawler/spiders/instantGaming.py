@@ -49,7 +49,7 @@ class MySpider(scrapy.Spider):
             discounted = str(item.css('.discounted::text').extract_first())
             date_published = str(item.css('.release-date::text').extract_first())
             final_price = str(item.css('.total::text').extract_first())
-            tags = item.css('a.searchtag::text').getall()
+            tags = str(item.css('a.searchtag::text').getall())
             genres = str(item.css('div.genres a.tag::text').getall())
             original_selling_platform = str(item.css('div.subinfos a.platform').get())
             playable_platform = item.css('select#platforms-choices option::attr(value)').getall() or ['PC']
@@ -70,7 +70,7 @@ class MySpider(scrapy.Spider):
                 discounted = discounted.replace('-', '').replace('%', ''),
                 date_published = date_published.replace('\n', ''),
                 final_price = final_price.replace('€', ''),
-                tags = tags,
+                tags = tags.replace('\\n', ''),
                 genres = genres.replace('\u00e9', 'é'),
                 original_selling_platform = original_selling_platform,
                 playable_platform = playable_platform,
