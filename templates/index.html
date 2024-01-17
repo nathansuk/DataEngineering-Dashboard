@@ -1,22 +1,21 @@
+<!DOCTYPE html>
 <html>
-
-
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard</title>
-
-</head>
+    <title>Dashboard Instant-Gaming</title>
 
 <body>
 
-    <h1>Bonjour {{ name }}</h1>
+    <h1>Dashboard Instant-Gaming</h1>
+    <div>
+        {{ plot | safe}}
+    </div>
 
-
+    <h1>Jeu de données</h1>
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
 
 </body>
-
-
-
-
 </html>
