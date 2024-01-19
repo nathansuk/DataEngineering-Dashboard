@@ -1,11 +1,11 @@
 from flask import Flask
 from flask import render_template
 import pymongo
-from pymongo import MongoClient
 import pandas as pd
 import plotly.express as px
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
+client = pymongo.MongoClient("mongo")
 
 #Connexion et import jeu de données
 client = pymongo.MongoClient("mongodb://root:example@localhost:27017/")
