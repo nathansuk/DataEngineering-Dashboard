@@ -1,2 +1,5 @@
 flask
 pymongo
+pandas
+plotly
+plotly-express

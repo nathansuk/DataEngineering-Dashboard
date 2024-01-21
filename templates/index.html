@@ -1,13 +1,4 @@
-<<<<<<< Updated upstream
-<!DOCTYPE html>
-<html>
-<head>
-
-    <meta charset="utf-8" />
-    <title>Dashboard Instant-Gaming</title>
-=======
 <html lang="fr">
-
 
 <head>
 
@@ -17,7 +8,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 
 </head>
->>>>>>> Stashed changes
+
 
 
 <body>
@@ -102,6 +93,27 @@
 
     <div class="page-content">
 
+        <div class="plot-container">
+            <div class=" plot plot-100">
+                {{ plot_avg_price | safe }}
+            </div>
+
+            <div class="plot plot-50">
+                {{ plot_review | safe }}
+            </div>
+
+            <div class="plot plot-50">
+                {{ plot_selling_platform | safe }}
+            </div>
+
+            <div class="plot plot-50">
+                {{ plot_avg_platform_price | safe }}
+            </div>
+
+            <div class="plot plot-50">
+                {{ plot_avg_discount | safe }}
+            </div>
+        </div>
 
 
 

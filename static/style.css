@@ -162,3 +162,35 @@ nav {
     position: relative;
     top: -30px;
 }
+
+.plot-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.plot {
+    height: 500px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.plot-40 {
+    width: 40%;
+}
+
+.plot-60 {
+    width: 60%;
+}
+
+.plot-100 {
+    width: 100%;
+}
+
+.plot-50 {
+    width: 48%;
+}
