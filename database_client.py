@@ -6,7 +6,7 @@ class DatabaseClient:
 
     #URI : "mongodb://root:example@mongo_database:27017"
     def __init__(self):
-        self.client = MongoClient("127.0.0.1")
+        self.client = MongoClient("mongodb://root:example@mongo_database:27017")
 
         if self.is_database_empty():
             print("La base de données est vide")

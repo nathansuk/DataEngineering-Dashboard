@@ -1,95 +1,16 @@
 <html lang="fr">
 
-<head>
-
-    <title>Dashboard</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-
-</head>
-
-
+{% include 'components/head.html' %}
 
 <body>
 
 <div class="container">
-<nav>
 
-    <div class="nav-content">
-        <div class="menu-title">
-            <h1>Dashboard</h1>
-            <div class="underline"></div>
-        </div>
-
-        <div class="menu-btn">
-                <div class="menu-btn-content">
-                    <i class="fi fi-sr-apps"></i>
-                    <span>Accueil</span>
-                </div>
-        </div>
-
-        <div class="menu-btn">
-            <div class="menu-btn-content">
-                <i class="fi fi-sr-comment-alt"></i>
-                <span>Données</span>
-            </div>
-        </div>
-    </div>
-
-</nav>
+{% include 'components/nav_component.html' %}
 
 <div class="page">
 
-    <div class="box-top">
-
-        <h1>Accueil</h1>
-
-    </div>
-
-    <div class="box-statistics">
-
-        <div class="box-stat">
-
-            <i class="fi fi-sr-globe"></i>
-
-            <div class="box-stat-numbers">
-                <h2>13 000</h2>
-                <span>données étudiées</span>
-            </div>
-
-        </div>
-
-        <div class="box-separator"></div>
-
-        <div class="box-stat">
-
-            <i class="fi fi-sr-globe"></i>
-
-            <div class="box-stat-numbers">
-                <h2>13 000</h2>
-                <span>données étudiées</span>
-            </div>
-
-        </div>
-
-                <div class="box-separator"></div>
-
-        <div class="box-stat">
-
-            <i class="fi fi-sr-globe"></i>
-
-            <div class="box-stat-numbers">
-                <h2>13 000</h2>
-                <span>données étudiées</span>
-            </div>
-
-        </div>
-
-
-
-
-    </div>
+    {% include 'components/page_top.html' %}
 
     <div class="page-content">
 

@@ -1,0 +1,33 @@
+<nav>
+
+    <div class="nav-content">
+        <div class="menu-title">
+            <h1>Dashboard</h1>
+            <div class="underline"></div>
+        </div>
+
+        <div class="menu-btn" id="index" onclick="redirect('/')">
+                <div class="menu-btn-content">
+                    <i class="fi fi-sr-apps"></i>
+                    <span>Accueil</span>
+                </div>
+        </div>
+
+        <div class="menu-btn" onclick="redirect('/display_data')">
+            <div class="menu-btn-content">
+                <i class="fi fi-sr-comment-alt"></i>
+                <span>Données</span>
+            </div>
+        </div>
+    </div>
+
+</nav>
+
+<script>
+
+    const redirect = (link) => {
+        window.location.href = link
+    }
+
+
+</script>

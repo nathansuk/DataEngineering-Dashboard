@@ -15,7 +15,7 @@ data = client.get_data_as_dataframe()
 
 
 @app.route("/")
-def hello_world():
+def accueil():
     # return render_template('index.html', plot=fig_date.to_html(), tables=[data_date.to_html(classes='data')])
     return render_template('index.html',
                            plot_avg_price=create_line_chart_avg_price(data),
@@ -23,6 +23,10 @@ def hello_world():
                            plot_selling_platform=create_pie_chart_platform(data),
                            plot_avg_platform_price=create_chart_avg_price_platform(data),
                            plot_avg_discount=create_chart_avg_discount_platform(data))
+
+@app.route("/display_data")
+def display_data():
+    return render_template("display_data.html")
 
 
 if __name__ == '__main__':
