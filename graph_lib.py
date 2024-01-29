@@ -2,7 +2,12 @@ import pandas as pd
 import plotly
 import plotly_express as px
 
+# Collection de fonctions servant à générer des graphiques depuis les données
 def create_line_chart_avg_price(data):
+    """
+    :param data:
+    :return: Un linechart du prix moyen par année
+    """
     data_date = data[~data["tags"].astype(str).str.contains("DLC", na=False)]
     data_date = data_date.dropna(subset=["date_published"]).reset_index(drop=True)
     data_date["date_published"] = data_date["date_published"].str.replace('-PC', '')
@@ -19,7 +24,12 @@ def create_line_chart_avg_price(data):
 
     return fig_date.to_html()
 
+
 def create_bar_chart_review(data):
+    """
+    :param data:
+    :return: Un bar chart des notes des utilisateurs en moyenne
+    """
     data['ig_review_average'] = data['ig_review_average'].replace(-1, None)
     data = data.dropna(subset=['ig_review_average'])
     occurrences_series = data['ig_review_average'].value_counts()
@@ -32,6 +42,10 @@ def create_bar_chart_review(data):
 
 
 def create_pie_chart_platform(data):
+    """
+    :param data:
+    :return: Un pie chart de la proportion des plateformes de vente à l'origine
+    """
     occurrences_series = data['original_selling_platform'].value_counts()
     occurrences_platform = pd.DataFrame(
         {'original_selling_platform': occurrences_series.index, 'occurrence': occurrences_series.values})
@@ -43,6 +57,10 @@ def create_pie_chart_platform(data):
     return fig_selling_platform.to_html()
 
 def create_chart_avg_price_platform(data):
+    """
+    :param data:
+    :return: Un bar chart du prix moyen par plateforme de vente à l'origine
+    """
     df = data.dropna(subset=['final_price']).copy()
     df['final_price'] = pd.to_numeric(df['final_price'], errors='coerce')
     average_prices = df.groupby('original_selling_platform')['final_price'].mean().reset_index()
@@ -56,7 +74,12 @@ def create_chart_avg_price_platform(data):
                                     labels={'average_price': 'Prix moyens (après réduction)', 'platform': 'Plateforme'})
     return fig_avg_price_platform.to_html()
 
+
 def create_chart_avg_discount_platform(data):
+    """
+    :param data:
+    :return: Un bar chart des réductions effectuées en moyenne
+    """
     df = data.dropna(subset=['discounted'])
     df['discounted'] = pd.to_numeric(df['discounted'], errors='coerce')
     average_discounted = df.groupby('original_selling_platform')['discounted'].mean().reset_index()

@@ -2,12 +2,19 @@ import pandas as pd
 from pymongo import MongoClient
 
 
+# Classe servant à la connexion à la base de données mongodb
+
 class DatabaseClient:
 
-    #URI : "mongodb://root:example@mongo_database:27017"
+    #URI DOCKER: "mongodb://root:example@mongo_database:27017"
+    #URI Local : "127.0.0.1"
+
+    # Constructeur
     def __init__(self):
+        # Connexion au service docker mongodb.
         self.client = MongoClient("mongodb://root:example@mongo_database:27017")
 
+        #Si la base de données est vide
         if self.is_database_empty():
             print("La base de données est vide")
             self.populate_database()
@@ -17,23 +24,42 @@ class DatabaseClient:
             print("La base de données est déjà remplie.")
 
     def get_client(self):
+        """
+        :return: le client PyMongo
+        """
         return self.client
 
     def get_instantgaming_series(self):
+        """
+        :return: le contenu de la collection "instantGaming"
+        """
         return self.client["admin"]["instantGaming"]
 
     def get_data_as_dataframe(self):
+        """
+        :return: Un Dataframe contenant les données
+        """
         curseur = self.get_instantgaming_series().find()
         liste = list(curseur)
         return pd.DataFrame(liste).drop(columns="_id")
 
     def get_nb_document(self):
+        """
+        :return: Le nombre de documents dans la collection
+        """
         return self.get_instantgaming_series().count_documents({})
 
     def is_database_empty(self):
+        """
+        :return: True si la base de données ne contient aucun document, False sinon
+        """
         return self.get_nb_document() == 0
 
     def populate_database(self):
+        """
+        Script permettant de remplir la base de données à partir du document : ./scraping/instantGaming.json
+        Celui-ci est exécuté si la base de données est vide lors du démarrage de l'app.
+        """
         data = pd.read_json("./scraping/instantGaming.json")
         data = data[data["url"].isna()].reset_index(drop=True)
         data = data.drop(columns=["url"])

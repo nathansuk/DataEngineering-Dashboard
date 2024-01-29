@@ -14,6 +14,23 @@
 
     <div class="page-content">
 
+        <div class="pagination">
+            <button type="button" onclick="changePage(-1)">< Page précédente</button>
+            <span>Page {{ current_page }} sur {{ nb_pages_total }}</span>
+            <button type="button" onclick="changePage(1)">Page suivante ></button>
+        </div>
+
+        <div class="data-table">
+            {% for table in tables %}
+                {{ table|safe }}
+            {% endfor %}
+        </div>
+
+        <div class="pagination">
+            <button type="button" onclick="changePage(-1)">< Page précédente</button>
+            <span>Page {{ current_page }} sur {{ nb_pages_total }}</span>
+            <button type="button" onclick="changePage(1)">Page suivante ></button>
+        </div>
 
     </div>
 
@@ -22,11 +39,27 @@
 
 </div>
 
-
-
-
 </div>
 
 
+<script type="text/javascript">
+
+    const changePage = (increment) => {
+        var urlPath = window.location.pathname.split("/");
+        var numPage = parseInt(urlPath[urlPath.length - 1], 10); // Assurez-vous que numPage est un nombre
+        var i = (increment === -1) ? -1 : 1;
+        const nextPage = numPage + i;
+
+        // Vérifiez si nextPage est dans la plage autorisée
+        if(nextPage >= 1 && nextPage <= 218){
+            window.location.href = "/display_data/" + nextPage;
+        }
+}
+
+
+</script>
+
 </body>
+
+
 </html>
