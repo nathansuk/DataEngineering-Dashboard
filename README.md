@@ -90,11 +90,11 @@ https://www.instant-gaming.com/fr/rechercher/
 Le module de recherche d'Instants Gaming possède une pagination avec + de 250 pages de 60 (max) jeux par page.
 Il faut donc dans un premier temps récupérer le nombre de pages grâce à l'élément HTML suivant.
 
-![Alt text](https://imgur.com/Go2beQb)
+![Alt text](https://i.ibb.co/7vq3bNZ/Capture-d-cran-2024-01-30-144054.png)
 
 Puis de parser chaque liens de chaque jeu
 
-![Alt text](https://imgur.com/hhDni0I)
+![Alt text](https://i.ibb.co/PNV7yLh/Capture-d-cran-2024-01-30-151225.png)
 
 Il s’agira ensuite de récupérer les informations pertinentes sur chaque page de chaque jeu  à savoir : 
 
@@ -255,9 +255,9 @@ services:
 
 ### Accès aux services
 
-Dashboard : http://localhost:8000
-Host Mongodb : http://localhost:27017
-MongoExpress : http://localhost:8081
+- Dashboard : http://localhost:8000
+- Host Mongodb : http://localhost:27017
+- MongoExpress : http://localhost:8081
 
 # MongoDB
 
