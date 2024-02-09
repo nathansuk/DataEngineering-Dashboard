@@ -151,6 +151,14 @@ editions = { str(option.css('::text').get().strip().replace('\u20ac', '')): str(
 
 Les données sont ensuite enregistrées dans le fichier : __{root}/scraping/instantGaming.json__
 
+## Execution du scraping
+
+Pour executer le script du scraping : 
+```shell
+cd scraping
+scrapy crawl newscrawler
+```
+
 # Docker & docker compose
 
 Nous avons fait le choix de créer 3 conteneurs différents pour 3 services à savoir : 
@@ -265,7 +273,6 @@ A partir de ce jeu de données au format JSON, il est possible de remplir la bas
 
 L’ajout des données depuis le fichier .json se fait à partir de la méthode : populate_database() de l’objet DatabaseClient (database_client.py)
 
-# Aperçus
 
 
 
