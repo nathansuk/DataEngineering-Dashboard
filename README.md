@@ -1,7 +1,7 @@
 
 # Projet Data Enginnering
 
-Ce projet consiste en un dashboard présentant des données "scrapées" depuis le site https://steampowered.com
+Ce projet consiste en un dashboard présentant des données "scrapées" depuis le site https://www.instant-gaming.com/fr/
 
 Le projet est constitué de 4 sous-parties : 
 
