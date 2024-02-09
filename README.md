@@ -1,7 +1,7 @@
 
 # Projet Data Enginnering
 
-Ce projet consiste en un dashboard présentant des données "scrapées" depuis le site https://www.instant-gaming.com/fr/
+Ce projet consiste en un dashboard présentant des données "scrapées" depuis le site https://www.instant-gaming.com
 
 Le projet est constitué de 4 sous-parties : 
 
