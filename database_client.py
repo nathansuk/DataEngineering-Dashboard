@@ -12,7 +12,7 @@ class DatabaseClient:
     # Constructeur
     def __init__(self):
         # Connexion au service docker mongodb.
-        self.client = MongoClient("mongodb://root:example@mongo_database:27017")
+        self.client = MongoClient("127.0.0.1")
 
         #Si la base de données est vide
         if self.is_database_empty():

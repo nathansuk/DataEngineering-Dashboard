@@ -10,7 +10,39 @@
 
 <div class="page">
 
-    {% include 'components/page_top.html' %}
+    <div class="box-top">
+
+        <h1>Accueil</h1>
+
+    </div>
+
+    <div class="box-statistics">
+
+        <div class="box-stat">
+
+            <i class="fi fi-sr-globe"></i>
+
+            <div class="box-stat-numbers">
+                <h2>{{ nb_data | safe }}</h2>
+                <span>données étudiées</span>
+            </div>
+
+        </div>
+
+        <div class="box-separator"></div>
+
+        <div class="box-stat">
+
+            <i class="fi fi-sr-link-alt"></i>
+
+            <div class="box-stat-numbers">
+                <h2>InstantGaming.com</h2>
+                <span>site scrapé</span>
+            </div>
+
+        </div>
+
+    </div>
 
     <div class="page-content">
 

@@ -114,6 +114,7 @@ nav {
     flex-direction: row;
     padding-right: 20px;
     padding-left: 20px;
+    justify-content: center;
 }
 
 .box-stat {
@@ -200,12 +201,17 @@ table {
     word-wrap: break-word;
     word-break: break-all;
     font-size: 11px;
+    table-layout: fixed;
 }
 
 table {
     font-family: 'Wix Madefor Display', sans-serif;!important
     border-collapse: collapse;
     width: 100%;
+}
+
+.dataframe {
+    border-collapse: collapse;
 }
 td, th {
     border: 1px solid #dddddd;
@@ -223,6 +229,10 @@ th {
 
 table, tr, td {
     border: none;
+}
+
+.dataframe > tbody > tr > td {
+    border: 1px solid #ececec;
 }
 
 .pagination {

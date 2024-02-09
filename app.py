@@ -23,6 +23,7 @@ def accueil():
     :return: Retourne la template page d'accueil et les graphiques
     """
     return render_template('index.html',
+                           nb_data=len(data),
                            plot_avg_price=create_line_chart_avg_price(data),
                            plot_review=create_bar_chart_review(data),
                            plot_selling_platform=create_pie_chart_platform(data),
@@ -43,6 +44,7 @@ def display_data(num_page):
     data_coupee = data.iloc[debut:fin]
     nb_pages_total = len(data) // nb_data_par_page + (0 if len(data) % nb_data_par_page == 0 else 1)
     return render_template("display_data.html",
+                           nb_data=len(data),
                            tables=[data_coupee.to_html(classes='data')],
                            nb_pages_total=nb_pages_total,
                            current_page=num_page)
