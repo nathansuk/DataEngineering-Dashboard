@@ -156,7 +156,7 @@ Les données sont ensuite enregistrées dans le fichier : __{root}/scraping/inst
 Pour executer le script du scraping : 
 ```shell
 cd scraping
-scrapy crawl newscrawler
+scrapy crawl instantGaming -o instantGaming.json
 ```
 
 # Docker & docker compose
