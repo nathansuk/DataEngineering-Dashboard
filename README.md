@@ -72,7 +72,7 @@ docker compose up
 
 Les services sont accessibles via les liens suivants : 
 
-- **Dashboard :** http://localhost:8000
+- **Dashboard :** http://localhost:5000
 - **Host Mongodb :** http://localhost:27017
 - **MongoExpress :** http://localhost:8081
 
@@ -263,7 +263,7 @@ services:
 
 ### Accès aux services
 
-- Dashboard : http://localhost:8000
+- Dashboard : http://localhost:5000
 - Host Mongodb : http://localhost:27017
 - MongoExpress : http://localhost:8081
 
@@ -273,7 +273,15 @@ A partir de ce jeu de données au format JSON, il est possible de remplir la bas
 
 L’ajout des données depuis le fichier .json se fait à partir de la méthode : populate_database() de l’objet DatabaseClient (database_client.py)
 
+# Mongo-Express
+Mongo Express est une interface web basée sur le framework Express permettant d'administrer la base de données depuis un lien localhost sans avoir à télécharger un client (MongoDB Compass)
+Pour y accéder il suffit de démarrer les 3 services (mongo > mongo-express > application)
+puis de se rendre sur la page : 
+- http://localhost:8081
 
+Une fenêtre pop-up va demander des identifiants : 
+- __utilisateur__ : web
+- __mot de passe__ : web
 
 
 
